@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "App to test bro to mongodb injection vulnterabilities in Rita",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben L",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "exec": "^0.2.1",
+    "express": "^4.14.0",
+    "http-status-codes": "^1.0.6",
+    "mongodb": "^2.2.10",
+    "mongoose": "^4.6.5",
+    "morgan": "^1.7.0"
+  }
+}
