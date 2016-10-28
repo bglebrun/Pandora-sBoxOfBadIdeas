@@ -7,11 +7,16 @@ var bodyParser = require('body-parser')
 var httpstatus = require('http-status-codes')
 var getRand = require('./unsafe/getrand')
 var unsafeUpdate = require('./unsafe/unsafeUpdate')
-const exec = require('child_process').exec
+const child_process = require('child_process').exec
 
 mongoose.connect('localhost:27017')
 
-exec("echo 'execution is working'")
+child_process("echo 'execution is working'", function (err, stdout, stderr) {
+  if (err) {
+    console.log('child process failed with error code: ', err.code)
+  }
+  console.log(stdout)
+})
 
 console.log('Connection established to MongoDB')
 
