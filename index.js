@@ -24,7 +24,21 @@ app.use(bodyParser.json())
 app.route('/rand')
 .get(function (req, res) {
   var doc, err
-  getRand(doc, err, function (doc, err) {
+  getRand.safeGet(doc, err, function (doc, err) {
+    if (err) {
+      res.status(httpstatus.BAD_REQUEST).send()
+    } else if (doc) {
+      res.send(doc)
+    } else {
+      res.status(httpstatus.NOT_FOUND).send()
+    }
+  })
+})
+
+app.route('/unsafeRand')
+.get(function (req, res) {
+  var doc, err
+  getRand.unsafeGet(doc, err, function (doc, err) {
     if (err) {
       res.status(httpstatus.BAD_REQUEST).send()
     } else if (doc) {
@@ -45,7 +59,7 @@ app.route('/inject')
       res.json({
         _id: doc._id,
         response: 'Your idea was unfortunately saved',
-        message: doc.message
+        message: req.body.idea.message
       })
     } else {
       console.log('Nothing updated')
