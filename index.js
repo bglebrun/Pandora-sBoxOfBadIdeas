@@ -84,6 +84,25 @@ app.route('/ideas/:id')
   res.status(httpstatus.BAD_REQUEST).send()
 })
 
+app.route('/ideas/:message')
+.get(function (req, res) {
+  manipulator.getIdeabyMessage(req.params.id, function (err, idea) {
+    if (err && err !== 'Not found') {
+      console.log(err)
+      res.status(httpstatus.BAD_REQUEST).send()
+    } else if (idea) {
+      res.json({
+        _id: idea._id,
+        response: "Here's what we found: ",
+        message: idea.message
+      })
+    } else {
+      console.log('Seems we didn\'t find our message, don\'t take that as an invitation though.')
+      res.status(httpstatus.NOT_FOUND).send()
+    }
+  })
+})
+
 app.route('/idea')
 .post(function (req, res) {
   manipulator.getIdeaByMessage(req.body.idea, function (err, results) {
