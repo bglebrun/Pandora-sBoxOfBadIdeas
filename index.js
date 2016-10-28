@@ -89,7 +89,7 @@ app.route('/ideas/:id')
   res.status(httpstatus.BAD_REQUEST).send()
 })
 
-app.route('/ideas/:message')
+app.route('/ideas/message/:message')
 .get(function (req, res) {
   manipulator.getIdeabyMessage(req.params.id, function (err, idea) {
     if (err && err !== 'Not found') {

@@ -8,8 +8,6 @@ var getRand = {
       if (err) {
         console.log(err)
         next(err)
-      } else {
-        console.log('Connected to database, getting our collection...\n')
       }
 
       var collection = db.collection('ideas')
