@@ -141,6 +141,6 @@ app.route('/idea')
 
 app.listen(80)
 
-console.log('App listening on port 3000')
+console.log('App listening on port 80')
 
 console.log('NOTE: We take no responsibilty for any bad ideas stored here. Your mother should have taught you better.\n')
