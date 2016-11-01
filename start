@@ -1,2 +1,2 @@
 ## because we're simulating real, actual, bad production practices, we'll start node as sudo
-sudo node.js index.js
+sudo nodejs index.js
