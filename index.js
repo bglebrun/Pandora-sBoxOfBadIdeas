@@ -28,17 +28,16 @@ app.use(bodyParser.json())
 
 // Main get route
 app.route('/')
-.get( function (req, res) {
+.get(function (req, res) {
   res.status(httpstatus.FORBIDDEN).json(
     {
-			message: 'This is not the route you seek',
-        meta: 'this is a json response '}
+      message: 'This is not the route you seek',
+      meta: 'this is a json response '}
   )
 })
-.all( function (req, res) {
-  res.status(httpstatus.BAD_REQUEST).send();
+.all(function (req, res) {
+  res.status(httpstatus.BAD_REQUEST).send()
 })
-
 
 app.route('/rand')
 .get(function (req, res) {
