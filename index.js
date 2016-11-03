@@ -133,6 +133,12 @@ app.route('/idea')
         response: 'Your idea was already there, horrible minds think alike',
         message: results.message
       })
+			manipulator.updateIdea(req.body.idea, function(err, results) {
+				if (err) {
+					console.log(err)
+					res.status(httpstatus.BAD_REQUEST).send()
+				}
+			})
     } else {
       manipulator.createIdea(req.body.idea, function (err, idea) {
         if (err) {

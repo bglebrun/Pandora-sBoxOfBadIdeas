@@ -15,6 +15,25 @@ var manipulator = {
     })
   },
 
+	updateIdea: function(ideaObject, next) {
+		Idea.update({message: ideaObject.message}, {
+			message: ideaObject.message,
+			count: ideaObject.count + 1
+		}, function(err, num, res) {
+			if (err) {
+				console.log(err)
+				next(err, null)
+			} else if (res) {
+				next(null, res)
+			} else {
+				console.log('For some rason, no object updated')
+				next('Failed', null)
+			}
+		}
+
+		})
+	}
+
   getIdeaByMessage: function (messageInput, next) {
     Idea.findOne({message: messageInput.message}, function (err, idea) {
       if (err) {
