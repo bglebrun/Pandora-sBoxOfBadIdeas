@@ -29,8 +29,6 @@ var manipulator = {
 				console.log('For some rason, no object updated')
 				next('Failed', null)
 			}
-		}
-
 		})
 	}
 
