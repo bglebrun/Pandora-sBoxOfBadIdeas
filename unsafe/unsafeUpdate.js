@@ -12,7 +12,7 @@ var insertDocument = function (doc, next) {
 
     var collection = db.collection('ideas')
 
-		var ideaInsert = {score: 0, date: Math.floor(Date.now()), message: doc.message, __v: 0)}
+		var ideaInsert = {score: 0, date: Math.floor(Date.now()), message: doc.message, __v: 0}
 
     collection.insertOne(ideaInsert, function (err, doc) {
       if (err) {
