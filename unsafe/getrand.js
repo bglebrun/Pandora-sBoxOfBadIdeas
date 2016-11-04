@@ -1,6 +1,6 @@
 var MongoClient = require('mongodb').MongoClient
 var urlSafe = 'mongodb://localhost:27017/test'
-var urlUnsafe = 'mongodb://localhost:27017/injectTest'
+var urlUnsafe = 'mongodb://localhost:27017/ritaInjectTest'
 
 var getRand = {
   safeGet: function (doc, err, next) {
