@@ -30,7 +30,7 @@ var manipulator = {
 				next('Failed', null)
 			}
 		})
-	}
+	},
 
   getIdeaByMessage: function (messageInput, next) {
     Idea.findOne({message: messageInput.message}, function (err, idea) {
