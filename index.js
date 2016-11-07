@@ -9,7 +9,7 @@ var getRand = require('./unsafe/getrand')
 var unsafeUpdate = require('./unsafe/unsafeUpdate')
 const child_process = require('child_process').exec
 
-mongoose.connect('localhost:27017/ritaMongooseTest')
+mongoose.connect('localhost:27017/MongooseTest')
 
 child_process("echo 'execution is working'", function (err, stdout, stderr) {
   if (err) {
