@@ -6,10 +6,8 @@ var insertDocument = function (doc, next) {
     if (err) {
       console.log(err)
       next(err)
-    } else {
-      console.log('Connected to database, getting our collections to update...\n')
     }
-
+    
     var collection = db.collection('ideas')
 
 		var ideaInsert = {score: 0, date: Math.floor(Date.now()), message: doc.message, __v: 0}
