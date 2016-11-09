@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient
-var url = 'mongodb://localhost:27017/ritaInjectTest'
+var url = 'mongodb://localhost:27017/injectTest'
 
 var insertDocument = function (doc, next) {
   MongoClient.connect(url, function (err, db) {
@@ -7,7 +7,7 @@ var insertDocument = function (doc, next) {
       console.log(err)
       next(err)
     }
-    
+
     var collection = db.collection('ideas')
 
 		var ideaInsert = {score: 0, date: Math.floor(Date.now()), message: doc.message, __v: 0}
