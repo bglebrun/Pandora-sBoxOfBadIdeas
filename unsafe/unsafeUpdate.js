@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient
-var url = 'mongodb://localhost:27017/injectTest'
+var url = 'mongodb://localhost:27017/nonCasted'
 
 var insertDocument = function (doc, next) {
   MongoClient.connect(url, function (err, db) {

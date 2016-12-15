@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient
-var urlSafe = 'mongodb://localhost:27017/test'
+var urlSafe = 'mongodb://localhost:27017/injectCasted'
 var urlUnsafe = 'mongodb://localhost:27017/injectTestUncasted'
 
 var getRand = {

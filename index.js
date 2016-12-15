@@ -9,7 +9,7 @@ var getRand = require('./unsafe/getrand')
 var unsafeUpdate = require('./unsafe/unsafeUpdate')
 const child_process = require('child_process').exec
 
-mongoose.connect('localhost:27017/MongooseTest')
+mongoose.connect('localhost:27017/Mongoos')
 
 child_process("echo 'execution is working'", function (err, stdout, stderr) {
   if (err) {
@@ -53,7 +53,7 @@ app.route('/rand')
   })
 })
 
-app.route('/unsafeRand')
+app.route('/noCastRand')
 .get(function (req, res) {
   var doc, err
   getRand.unsafeGet(doc, err, function (doc, err) {
@@ -67,7 +67,7 @@ app.route('/unsafeRand')
   })
 })
 
-app.route('/inject')
+app.route('/noCastInsert')
 .post(function (req, res) {
   unsafeUpdate(req.body.idea, function (doc, err) {
     if (err) {
@@ -121,7 +121,7 @@ app.route('/ideas/message/:message')
   })
 })
 
-app.route('/idea')
+app.route('/mongooseInsert')
 .post(function (req, res) {
   manipulator.getIdeaByMessage(req.body.idea, function (err, results) {
     if (err && err !== 'Not found') {
